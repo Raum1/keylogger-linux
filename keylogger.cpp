@@ -23,9 +23,6 @@ int main(int argc, char** argv){
         if((ev.type == EV_KEY) && (ev.value == 0)){
             std::cout << ev.code << std::endl;
             lf << ev.code << std::endl;
-            if(ev.code == 1){
-                break;
-            }
         }
     }
     lf.close();
