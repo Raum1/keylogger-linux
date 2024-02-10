@@ -38,6 +38,7 @@ fn print_sorted_table(table: &HashMap<i32, i32>){
     }
 }
 
+// Print all the characters 
 fn print_long_string(table: &HashMap<i32, i32>){
     let mut string: String = "".to_owned();
     for letter in table.keys(){
@@ -56,7 +57,6 @@ fn print_long_string(table: &HashMap<i32, i32>){
 }
 
 fn main() {
-    println!("Reading keys input...");
     let mut table: HashMap<i32, i32> = HashMap::new();
 
     //Represent each line as an element in Vec
@@ -68,15 +68,15 @@ fn main() {
                 //Create and assign value of 1
                 table.insert(key_code, 1);
             }
+            //Add one to the key's value
             else {
                 if let Some(value) = table.get_mut(&key_code) {
-                    //Add 1 to the value
                     *value += 1;
                 }
             }
         }
     }
-    //print_sorted_table(&table);
-    print_long_string(&table);
+    print_sorted_table(&table);
+    //print_long_string(&table);
     
 } 
